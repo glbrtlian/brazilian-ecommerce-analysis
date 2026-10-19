@@ -81,17 +81,22 @@ with st.sidebar:
     
     # State Filter
     all_states = sorted(df_raw["customer_state"].dropna().unique().tolist())
-    selected_states = st.multiselect(
+    state_options = ["Semua State"] + all_states
+    selected_state_option = st.multiselect(
         label="Pilih Wilayah (State)",
-        options=all_states,
-        default=all_states[:5]
+        options=state_options,
+        default=["Semua State"]
     )
-    if not selected_states:
+    # Jika memilih "Semua State" atau tidak ada pilihan → tampilkan semua
+    if not selected_state_option or "Semua State" in selected_state_option:
         selected_states = all_states
+    else:
+        selected_states = selected_state_option
         
     st.markdown("---")
     st.markdown("**Profil Analis:**")
     st.markdown("- **Nama:** Gilbert Finsen Zakaria Lian")
+    st.markdown("- **ID Dicoding:** gilbert_lian")
     st.markdown("- **Dataset:** Brazilian E-Commerce (Olist)")
 
 # Apply filters
@@ -186,7 +191,10 @@ with tab2:
     with col_left:
         st.markdown("#### 🥇 Top 5 Kategori Teratas (Revenue)")
         fig, ax = plt.subplots(figsize=(8, 5))
-        colors = ['#10B981' if i == 0 else '#93C5FD' for i in range(len(top_5_cats))]
+        # Warna seragam biru, highlight hijau hanya pada nilai tertinggi (index 0)
+        base_color_top = '#93C5FD'
+        highlight_color_top = '#10B981'
+        colors = [highlight_color_top if i == 0 else base_color_top for i in range(len(top_5_cats))]
         bars = ax.barh(top_5_cats['product_category_name_english'], top_5_cats['total_revenue'], color=colors)
         ax.invert_yaxis()
         ax.set_xlabel('Total Revenue (BRL)', fontsize=10, fontweight='bold')
@@ -201,7 +209,10 @@ with tab2:
     with col_right:
         st.markdown("#### 🔻 Bottom 5 Kategori Terendah (Revenue)")
         fig, ax = plt.subplots(figsize=(8, 5))
-        colors = ['#EF4444' if i == 0 else '#FCA5A5' for i in range(len(bottom_5_cats))]
+        # Warna seragam merah muda, highlight merah tua hanya pada nilai terendah (index 0)
+        base_color_bot = '#FCA5A5'
+        highlight_color_bot = '#EF4444'
+        colors = [highlight_color_bot if i == 0 else base_color_bot for i in range(len(bottom_5_cats))]
         bars = ax.barh(bottom_5_cats['product_category_name_english'], bottom_5_cats['total_revenue'], color=colors)
         ax.invert_yaxis()
         ax.set_xlabel('Total Revenue (BRL)', fontsize=10, fontweight='bold')
@@ -352,13 +363,10 @@ with tab5:
     with col_g1:
         st.markdown("#### 10 Negara Bagian (State) Terbesar Berdasarkan Pesanan")
         fig, ax = plt.subplots(figsize=(8, 5))
-        sns.barplot(
-            data=state_orders.head(10), 
-            x="customer_state", 
-            y="total_orders", 
-            palette="Blues_r", 
-            ax=ax
-        )
+        top10_orders = state_orders.head(10)
+        # Seragamkan warna: biru dominan, highlight state tertinggi (index 0)
+        geo_colors = ['#1D4ED8' if i == 0 else '#93C5FD' for i in range(len(top10_orders))]
+        ax.bar(top10_orders["customer_state"], top10_orders["total_orders"], color=geo_colors)
         ax.set_xlabel("Negara Bagian (State)", fontsize=10, fontweight='bold')
         ax.set_ylabel("Jumlah Pesanan Unik", fontsize=10, fontweight='bold')
         ax.set_title("Konsentrasi Pelanggan per Negara Bagian Brazil", fontsize=12, fontweight='bold')
@@ -369,13 +377,10 @@ with tab5:
     with col_g2:
         st.markdown("#### Rata-rata Durasi Pengiriman (Hari) per State (Top 10)")
         fig, ax = plt.subplots(figsize=(8, 5))
-        sns.barplot(
-            data=state_orders.head(10).sort_values("avg_delivery_time", ascending=False), 
-            x="customer_state", 
-            y="avg_delivery_time", 
-            palette="Reds_r", 
-            ax=ax
-        )
+        top10_delivery = state_orders.head(10).sort_values("avg_delivery_time", ascending=False)
+        # Seragamkan warna: merah dominan, highlight state terlama (index 0)
+        del_colors = ['#B91C1C' if i == 0 else '#FCA5A5' for i in range(len(top10_delivery))]
+        ax.bar(top10_delivery["customer_state"], top10_delivery["avg_delivery_time"], color=del_colors)
         ax.set_xlabel("Negara Bagian (State)", fontsize=10, fontweight='bold')
         ax.set_ylabel("Rata-rata Waktu Pengiriman (Hari)", fontsize=10, fontweight='bold')
         ax.set_title("Perbandingan Efisiensi Logistik Antar State", fontsize=12, fontweight='bold')

@@ -7,7 +7,8 @@ Proyek akhir analisis data ini dikembangkan untuk memenuhi kriteria kelulusan ke
 ## 📌 Biodata Pengembang
 - **Nama:** Gilbert Finsen Zakaria Lian
 - **Email:** glian6020@gmail.com
-- **ID Dicoding:** ds269b6y0676
+- **ID Dicoding:** gilbert_lian
+- **Username Dicoding:** gilbert_lian (Gilbert Finsen Zakaria Lian)
 
 ---
 
