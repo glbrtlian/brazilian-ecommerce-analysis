@@ -110,7 +110,9 @@ Proyek ini telah dikonfigurasi agar siap di-deploy langsung ke **Streamlit Commu
 2. Buka [share.streamlit.io](https://share.streamlit.io/) dan hubungkan dengan akun GitHub Anda.
 3. Pilih repositori, branch `main`, dan set *Main file path* ke: `dashboard/dashboard.py`.
 4. Klik **Deploy**!
-5. Tautan dashboard dapat dituliskan ke dalam berkas `url.txt`.
+5. Tautan dashboard dituliskan ke dalam berkas `url.txt`.
+- **Live Dashboard URL:** [https://brazilian-ecommerce-analysis-kkp6aqur6bzz7skyqjozbj.streamlit.app/](https://brazilian-ecommerce-analysis-kkp6aqur6bzz7skyqjozbj.streamlit.app/)
+- **GitHub Repository:** [https://github.com/glbrtlian/brazilian-ecommerce-analysis](https://github.com/glbrtlian/brazilian-ecommerce-analysis)
 
 ---
 

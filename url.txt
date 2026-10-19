@@ -1,4 +1,1 @@
-# Tautan Deployment Streamlit Cloud
-# Silakan deploy repositori GitHub Anda ke Streamlit Community Cloud (https://share.streamlit.io/)
-# Contoh tautan hasil deployment:
-https://brazilian-ecommerce-analysis-gilbert.streamlit.app/
+https://brazilian-ecommerce-analysis-kkp6aqur6bzz7skyqjozbj.streamlit.app/
