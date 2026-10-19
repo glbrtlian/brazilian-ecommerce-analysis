@@ -1,0 +1,13 @@
+# Virtual Environment
+.venv/
+venv/
+env/
+
+# Python cache & Jupyter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Submission package
+submission.zip
+submission/
