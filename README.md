@@ -15,20 +15,20 @@ Proyek akhir analisis data ini dikembangkan untuk memenuhi kriteria kelulusan ke
 ## 🎯 Pertanyaan Bisnis (SMART Question Framework)
 
 1. **Pertanyaan 1 (Kategori Produk & Revenue):**
-   > *Kategori produk apa saja yang menghasilkan total pendapatan (revenue) tertinggi dan terendah pada platform e-commerce Olist sepanjang periode 2017 hingga 2018, dan bagaimana dinamika penjualannya?*
-   - **Specific:** Mengidentifikasi 5 kategori teratas dan 5 kategori terbawah berdasarkan total revenue di platform Olist.
-   - **Measurable:** Dihitung dari total nilai pesanan (*Gross Merchandise Value* / GMV) dalam mata uang Brazilian Real (BRL).
+   > *Kategori produk apa saja yang menghasilkan total pendapatan (revenue) tertinggi dan terendah pada platform e-commerce Olist sepanjang periode 2017 hingga 2018?*
+   - **Specific:** Mengidentifikasi 5 kategori teratas (*top 5*) dan 5 kategori terbawah (*bottom 5*) berdasarkan total revenue di platform Olist.
+   - **Measurable:** Dihitung dari total nilai pesanan (*Gross Merchandise Value* / GMV) dalam mata uang Brazilian Real (BRL) serta total unit pesanan yang terjual.
    - **Action-Oriented:** Manajemen dapat mengalokasikan anggaran promosi dan kemitraan penjual ke kategori unggulan, serta merestrukturisasi kategori yang tidak produktif.
-   - **Relevant:** Berdampak langsung pada strategi kurasi katalog produk dan pertumbuhan pendapatan perusahaan.
-   - **Time-bound:** Dibatasi secara spesifik pada periode transaksi tahun 2017 hingga 2018.
+   - **Relevant:** Berdampak langsung pada strategi kurasi katalog produk dan pertumbuhan pendapatan (*revenue growth*).
+   - **Time-bound:** Dibatasi secara spesifik pada rentang transaksi tahun 2017 hingga 2018.
 
 2. **Pertanyaan 2 (Logistik & Kepuasan Pelanggan):**
-   > *Bagaimana pengaruh selisih waktu pengiriman aktual terhadap estimasi pengiriman (delivery delay) terhadap skor kepuasan pelanggan (review score) pada pesanan berstatus delivered selama tahun 2017-2018?*
-   - **Specific:** Meneliti disparitas ulasan ulasan pelanggan antara pesanan yang tiba tepat waktu (*On-Time / Early*) vs pesanan yang terlambat (*Late*).
-   - **Measurable:** Diukur dengan rata-rata skor ulasan (skala 1 s/d 5) dan proporsi distribusi bintang ulasan.
+   > *Bagaimana pengaruh keterlambatan pengiriman (delivery delay) terhadap skor kepuasan pelanggan (review score) pada pesanan berstatus delivered sepanjang periode 2017 hingga 2018?*
+   - **Specific:** Meneliti disparitas ulasan pelanggan antara pesanan yang tiba tepat waktu (*On-Time / Early*) vs pesanan yang mengalami keterlambatan (*Late*), serta menganalisis penurunan skor berdasarkan rentang durasi hari keterlambatan.
+   - **Measurable:** Diukur dengan rata-rata skor ulasan (*review score* pada skala 1 hingga 5) dan proporsi distribusi bintang ulasan.
    - **Action-Oriented:** Menjadi dasar peninjauan SLA ekspedisi logistik, pembaruan algoritma estimasi tiba, dan otomasi kompensasi keterlambatan.
    - **Relevant:** Kepuasan pengiriman merupakan pilar utama retensi pengguna dan reputasi platform e-commerce.
-   - **Time-bound:** Dianalisis pada pesanan berstatus *delivered* sepanjang 2017 hingga 2018.
+   - **Time-bound:** Dianalisis pada pesanan berstatus *delivered* sepanjang periode 2017 hingga 2018.
 
 ---
 

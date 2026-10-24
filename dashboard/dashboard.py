@@ -177,6 +177,7 @@ with tab1:
 # ----- TAB 2: Kategori Produk (Pertanyaan 1) -----
 with tab2:
     st.subheader("Pertanyaan Bisnis 1: Kategori Produk dengan Revenue Tertinggi & Terendah")
+    st.markdown("> **Kategori produk apa saja yang menghasilkan total pendapatan (*revenue*) tertinggi dan terendah pada platform e-commerce Olist sepanjang periode 2017 hingga 2018?**")
     
     cat_summary = filtered_df.groupby("product_category_name_english").agg(
         total_revenue=("price", "sum"),
@@ -233,6 +234,7 @@ with tab2:
 # ----- TAB 3: Logistik & Kepuasan (Pertanyaan 2) -----
 with tab3:
     st.subheader("Pertanyaan Bisnis 2: Pengaruh Keterlambatan Pengiriman terhadap Kepuasan Pelanggan")
+    st.markdown("> **Bagaimana pengaruh keterlambatan pengiriman (*delivery delay*) terhadap skor kepuasan pelanggan (*review score*) pada pesanan berstatus *delivered* sepanjang periode 2017 hingga 2018?**")
     
     deliv_df = filtered_df.dropna(subset=["delivery_status", "review_score"]).copy()
     
